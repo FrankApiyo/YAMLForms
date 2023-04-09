@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>example-form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <None id="example-form">
+          <today/>
+          <gender/>
+          <age/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </None>
+      </instance>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/None/today" type="date"/>
+      <bind nodeset="/None/gender" type="string"/>
+      <bind nodeset="/None/age" type="int"/>
+      <bind jr:preload="uid" nodeset="/None/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <select1 ref="/None/gender">
+      <label>Respondent's gender?</label>
+      <item>
+        <label>Transgender</label>
+        <value>transgender</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>female</value>
+      </item>
+      <item>
+        <label>Male</label>
+        <value>male</value>
+      </item>
+      <item>
+        <label>Other</label>
+        <value>other</value>
+      </item>
+    </select1>
+    <input ref="/None/age">
+      <label>Respondent's age?</label>
+    </input>
+  </h:body>
+</h:html>
