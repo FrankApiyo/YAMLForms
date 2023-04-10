@@ -1,0 +1,32 @@
+type: survey
+name: repeat-form
+title: Repeat Form
+id_string: repeat-form
+sms_keyword: repeat-form
+default_language: default
+children:
+  - name: child_repeat
+    label: "Child Repeat"
+    type: repeat
+    children:
+      - name: name
+        label: "Name"
+        type: text
+      - name: male_female
+        label: "Male or Female?"
+        type: select one
+        choices:
+          - name: male
+            label: "Male"
+          - name: female
+            label: "Female"
+  - name: meta
+    type: group
+    control:
+      bodyless: true
+    children:
+      - name: instanceID
+        bind:
+          readonly: true()
+          jr:preload: uid
+        type: calculate

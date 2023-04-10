@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>repeat-form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <None id="repeat-form">
+          <person_repeat jr:template="">
+            <person>
+              <first_name/>
+              <last_name/>
+              <age/>
+            </person>
+          </person_repeat>
+          <person_repeat>
+            <person>
+              <first_name/>
+              <last_name/>
+              <age/>
+            </person>
+          </person_repeat>
+          <meta>
+            <instanceID/>
+          </meta>
+        </None>
+      </instance>
+      <bind nodeset="/None/person_repeat/person/first_name" type="string"/>
+      <bind nodeset="/None/person_repeat/person/last_name" type="string"/>
+      <bind nodeset="/None/person_repeat/person/age" type="int"/>
+      <bind jr:preload="uid" nodeset="/None/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group ref="/None/person_repeat">
+      <label></label>
+      <repeat nodeset="/None/person_repeat">
+        <group ref="/None/person_repeat/person">
+          <label><output value=" ../person/first_name "/><output value=" ../person/last_name "/> - <output value=" ../person/age "/> </label><input ref="/None/person_repeat/person/first_name">
+            <label>First Name</label>
+          </input>
+          <input ref="/None/person_repeat/person/last_name">
+            <label>Last Name</label>
+          </input>
+          <input ref="/None/person_repeat/person/age">
+            <label>Age</label>
+          </input>
+        </group>
+      </repeat>
+    </group>
+  </h:body>
+</h:html>
+

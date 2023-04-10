@@ -1,0 +1,23 @@
+type: survey
+name: None
+title: gps-form
+id_string: gps-form
+sms_keyword: gps-form
+default_language: default
+children:
+  - name: store_name
+    type: text
+    label: What is the name of this store?
+  - name: store_gps
+    type: geopoint
+    label: Collect the GPS coordinates of this store
+  - name: meta
+    type: group
+    control:
+      bodyless: true
+    children:
+      - name: instanceID
+        bind:
+          readonly: true()
+          jr:preload: uid
+        type: calculate

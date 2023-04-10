@@ -1,0 +1,34 @@
+{
+  "type": "survey",
+  "name": "date-form",
+  "title": "Date Form",
+  "id_string": "date-form",
+  "sms_keyword": "date-form",
+  "default_language": "default",
+  "children": [
+    {
+      "name": "d",
+      "label": "Date",
+      "type": "date",
+      "appearance": "calendar",
+      "default": "today()"
+    },
+    {
+      "name": "meta",
+      "type": "group",
+      "control": {
+        "bodyless": true
+      },
+      "children": [
+        {
+          "name": "instanceID",
+          "bind": {
+            "readonly": "true()",
+            "calculate": "uuid()"
+          },
+          "type": "calculate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Integer Form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <integer-form id="integer-form">
+          <integer_field>5</integer_field>
+          <meta>
+            <instanceID/>
+          </meta>
+        </integer-form>
+      </instance>
+      <bind nodeset="/integer-form/integer_field" readonly="true()" type="int"/>
+      <bind jr:preload="uid" nodeset="/integer-form/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/integer-form/integer_field">
+      <label>Integer Field</label>
+    </input>
+  </h:body>
+</h:html>
+

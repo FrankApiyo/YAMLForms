@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Repeat Form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <repeat-form id="repeat-form">
+          <child_repeat jr:template="">
+            <name/>
+            <male_female/>
+          </child_repeat>
+          <child_repeat>
+            <name/>
+            <male_female/>
+          </child_repeat>
+          <meta>
+            <instanceID/>
+          </meta>
+        </repeat-form>
+      </instance>
+      <bind nodeset="/repeat-form/child_repeat/name" type="string"/>
+      <bind nodeset="/repeat-form/child_repeat/male_female" type="string"/>
+      <bind jr:preload="uid" nodeset="/repeat-form/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group ref="/repeat-form/child_repeat">
+      <label>Child Repeat</label>
+      <repeat nodeset="/repeat-form/child_repeat">
+        <input ref="/repeat-form/child_repeat/name">
+          <label>Name</label>
+        </input>
+        <select1 ref="/repeat-form/child_repeat/male_female">
+          <label>Male or Female?</label>
+          <item>
+            <label>Male</label>
+            <value>male</value>
+          </item>
+          <item>
+            <label>Female</label>
+            <value>female</value>
+          </item>
+        </select1>
+      </repeat>
+    </group>
+  </h:body>
+</h:html>
+

@@ -11,33 +11,33 @@
       "type": "today"
     },
     {
-      "name": "gender",
       "label": "Respondent's gender?",
+      "name": "gender",
       "type": "select one",
       "parameters": {},
       "list_name": "gender",
       "choices": [
         {
-          "name": "transgender",
-          "label": "Transgender"
+          "label": "Transgender",
+          "name": "transgender"
         },
         {
-          "name": "female",
-          "label": "Female"
+          "label": "Female",
+          "name": "female"
         },
         {
-          "name": "male",
-          "label": "Male"
+          "label": "Male",
+          "name": "male"
         },
         {
-          "name": "other",
-          "label": "Other"
+          "label": "Other",
+          "name": "other"
         }
       ]
     },
     {
-      "name": "age",
       "label": "Respondent's age?",
+      "name": "age",
       "type": "integer"
     },
     {

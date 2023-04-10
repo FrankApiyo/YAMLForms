@@ -1,0 +1,55 @@
+{
+  "type": "survey",
+  "name": "None",
+  "title": "repeat-form",
+  "id_string": "repeat-form",
+  "sms_keyword": "repeat-form",
+  "default_language": "default",
+  "children": [
+    {
+      "name": "person_repeat",
+      "type": "repeat",
+      "children": [
+        {
+          "name": "person",
+          "type": "group",
+          "label": "${first_name} ${last_name} - ${age}",
+          "children": [
+            {
+              "name": "first_name",
+              "type": "text",
+              "label": "First Name"
+            },
+            {
+              "name": "last_name",
+              "type": "text",
+              "label": "Last Name"
+            },
+            {
+              "name": "age",
+              "type": "integer",
+              "label": "Age"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "meta",
+      "type": "group",
+      "control": {
+        "bodyless": true
+      },
+      "children": [
+        {
+          "name": "instanceID",
+          "bind": {
+            "readonly": "true()",
+            "jr:preload": "uid"
+          },
+          "type": "calculate"
+        }
+      ]
+    }
+  ]
+}

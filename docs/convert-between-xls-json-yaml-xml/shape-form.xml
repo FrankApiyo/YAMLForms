@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>shape-form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <None id="shape-form">
+          <pipe/>
+          <border/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </None>
+      </instance>
+      <bind nodeset="/None/pipe" type="geotrace"/>
+      <bind nodeset="/None/border" type="geoshape"/>
+      <bind jr:preload="uid" nodeset="/None/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/None/pipe">
+      <label>Pipeline</label>
+      <hint>Please walk alone the pipeline and record the cordinates of each corner point</hint>
+    </input>
+    <input ref="/None/border">
+      <label>Border</label>
+      <hint>Please walk along the border and record the coordinates of each corner point</hint>
+    </input>
+  </h:body>
+</h:html>

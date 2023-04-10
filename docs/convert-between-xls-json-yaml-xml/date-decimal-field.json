@@ -1,0 +1,39 @@
+{
+  "type": "survey",
+  "name": "date-decimal-form",
+  "title": "Date Decimal Form",
+  "id_string": "date_decimal_form",
+  "sms_keyword": "date_decimal_form",
+  "default_language": "default",
+  "children": [
+    {
+      "name": "date_field",
+      "label": "Date Field",
+      "type": "date",
+      "default": "2023-04-10"
+    },
+    {
+      "name": "decimal_field",
+      "label": "Decimal Field",
+      "type": "decimal",
+      "default": "1.23"
+    },
+    {
+      "name": "meta",
+      "type": "group",
+      "control": {
+        "bodyless": true
+      },
+      "children": [
+        {
+          "name": "instanceID",
+          "bind": {
+            "readonly": "true()",
+            "jr:preload": "uid"
+          },
+          "type": "calculate"
+        }
+      ]
+    }
+  ]
+}

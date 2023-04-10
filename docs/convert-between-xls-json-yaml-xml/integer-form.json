@@ -1,0 +1,36 @@
+{
+  "type": "survey",
+  "name": "integer-form",
+  "title": "Integer Form",
+  "id_string": "integer-form",
+  "sms_keyword": "integer-form",
+  "default_language": "default",
+  "children": [
+    {
+      "name": "integer_field",
+      "label": "Integer Field",
+      "type": "integer",
+      "default": 5,
+      "bind": {
+        "readonly": "true()"
+      }
+    },
+    {
+      "name": "meta",
+      "type": "group",
+      "control": {
+        "bodyless": true
+      },
+      "children": [
+        {
+          "name": "instanceID",
+          "bind": {
+            "readonly": "true()",
+            "jr:preload": "uid"
+          },
+          "type": "calculate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Repeat Conditional Form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <repeat-conditional-form id="repeat-conditional-form">
+          <age/>
+          <repeat_group jr:template="">
+            <name/>
+          </repeat_group>
+          <repeat_group>
+            <name/>
+          </repeat_group>
+          <meta>
+            <instanceID/>
+          </meta>
+        </repeat-conditional-form>
+      </instance>
+      <bind nodeset="/repeat-conditional-form/age" type="int"/>
+      <bind nodeset="/repeat-conditional-form/repeat_group/name" type="string"/>
+      <bind jr:preload="uid" nodeset="/repeat-conditional-form/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/repeat-conditional-form/age">
+      <label>Age</label>
+    </input>
+    <group ref="/repeat-conditional-form/repeat_group">
+      <label>Repeat Group</label>
+      <repeat nodeset="/repeat-conditional-form/repeat_group">
+        <input ref="/repeat-conditional-form/repeat_group/name">
+          <label>Name</label>
+        </input>
+      </repeat>
+    </group>
+  </h:body>
+</h:html>
+

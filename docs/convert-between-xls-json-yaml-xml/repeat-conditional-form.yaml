@@ -1,0 +1,28 @@
+type: survey
+name: repeat-conditional-form
+title: Repeat Conditional Form
+id_string: repeat-conditional-form
+sms_keyword: repeat-conditional-form
+default_language: default
+children:
+  - name: age
+    label: "Age"
+    type: integer
+  - name: repeat_group
+    type: repeat
+    label: "Repeat Group"
+    children:
+      - name: name
+        label: "Name"
+        type: text
+    relevant: "selected(../age >= 18)"
+  - name: meta
+    type: group
+    control:
+      bodyless: true
+    children:
+      - name: instanceID
+        bind:
+          readonly: true()
+          jr:preload: uid
+        type: calculate

@@ -1,0 +1,25 @@
+type: survey
+name: None
+title: shape-form
+id_string: shape-form
+sms_keyword: shape-form
+default_language: default
+children:
+  - name: pipe
+    type: geotrace
+    label: Pipeline
+    hint: Please walk alone the pipeline and record the cordinates of each corner point
+  - name: border
+    type: geoshape
+    label: Border
+    hint: Please walk along the border and record the coordinates of each corner point
+  - name: meta
+    type: group
+    control:
+      bodyless: true
+    children:
+      - name: instanceID
+        bind:
+          readonly: true()
+          jr:preload: uid
+        type: calculate

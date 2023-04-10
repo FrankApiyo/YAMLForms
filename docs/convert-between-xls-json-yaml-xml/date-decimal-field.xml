@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Date Decimal Form</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <date-decimal-form id="date_decimal_form">
+          <date_field>2023-04-10</date_field>
+          <decimal_field>1.23</decimal_field>
+          <meta>
+            <instanceID/>
+          </meta>
+        </date-decimal-form>
+      </instance>
+      <bind nodeset="/date-decimal-form/date_field" type="date"/>
+      <bind nodeset="/date-decimal-form/decimal_field" type="decimal"/>
+      <bind jr:preload="uid" nodeset="/date-decimal-form/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/date-decimal-form/date_field">
+      <label>Date Field</label>
+    </input>
+    <input ref="/date-decimal-form/decimal_field">
+      <label>Decimal Field</label>
+    </input>
+  </h:body>
+</h:html>

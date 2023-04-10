@@ -1,0 +1,21 @@
+type: survey
+name: None
+title: gps-form-with-accuracy
+id_string: gps-form-with-accuracy
+sms_keyword: gps-form-with-accuracy
+default_language: default
+children:
+  - name: store_gps
+    type: gps
+    label: Collect the GPS coordinates of this store.
+    body::accuracyThreshold: 1.5
+  - name: meta
+    type: group
+    control:
+      bodyless: true
+    children:
+      - name: instanceID
+        bind:
+          readonly: true()
+          jr:preload: uid
+        type: calculate
