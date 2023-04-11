@@ -53,7 +53,7 @@ It's rendered here: <!-- TODO - add a link to enketo -->
 YAML Forms supports a number of question types. Here are some of the available options:
 
 | Question type                    | Answer input                                                                                 |
-|----------------------------------|----------------------------------------------------------------------------------------------|
+| -------------------------------- | -------------------------------------------------------------------------------------------- |
 | integer                          | Integer (i.e., whole number) input.                                                          |
 | decimal                          | Decimal input.                                                                               |
 | range                            | Range input (including rating)                                                               |
@@ -319,3 +319,8 @@ Enketo URL: https://enketo-stage.ona.io/x/uVf5ZX8d
 
 - Complete YAML forms documentation
 - Generate YAML schemas to be used for linting YAML forms
+
+
+## Public OnaData project with some of these forms
+
+- https://stage.ona.io/testorg1/554
